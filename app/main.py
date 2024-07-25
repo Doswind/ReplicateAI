@@ -1,11 +1,10 @@
-from fastapi import FastAPI
-import uvicorn
+from bottle import Bottle, run, template
 
-app = FastAPI()
+app = Bottle()
 
-@app.get("/")
-async def welcome():
-    return {"message": "欢迎来到我的简单FastAPI应用！"}
+@app.route('/')
+def welcome():
+    return template('<b>欢迎来到我的简单Bottle应用！</b>')
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+if __name__ == '__main__':
+    run(app, host='0.0.0.0', port=8080)
