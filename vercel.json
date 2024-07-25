@@ -14,10 +14,5 @@
   ],
   "env": {
     "VERCEL_START_COMMAND": "python app/main.py"
-  },
-  "functions": {
-    "api/**": {
-      "compression": "gzip"
-    }
   }
 }
