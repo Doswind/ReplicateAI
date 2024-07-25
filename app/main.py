@@ -106,4 +106,4 @@ with gr.Blocks(css=custom_css) as demo:
 
             run_button.click(run_stable_diffusion, inputs=[prompt, negative_prompt, seed, randomize_seed, width, height, guidance_scale, num_inference_steps], outputs=output_image_sd)
 
-demo.launch()
+demo.launch(server_name="0.0.0.0")
