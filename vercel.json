@@ -13,6 +13,6 @@
     }
   ],
   "env": {
-    "VERCEL_START_COMMAND": "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    "VERCEL_START_COMMAND": "python app/main.py"
   }
 }
