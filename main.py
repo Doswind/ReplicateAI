@@ -14,6 +14,10 @@ async def restore(request: Request):
     authorization = request.headers.get("Authorization")
     content_type = request.headers.get("Content-Type")
 
+    # 打印或处理请求头信息
+    print(f"Authorization: {authorization}")
+    print(f"Content-Type: {content_type}")
+
     # 解析请求体中的JSON数据
     json_data = await request.json()
 
@@ -22,7 +26,7 @@ async def restore(request: Request):
 
     # 调用CodeFormer进行处理
     try:
-        client =replicate.Client(api_token=authorization)
+        client =replicate.Client(api_token=authorization.replace("Bearer ", ""))
         output = client.run(version, input)
     except Exception as e:
         print(f"Error during CodeFormer processing: {e}")
