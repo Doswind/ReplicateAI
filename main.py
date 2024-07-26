@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
-import codeformer as cf
-import gfpgan as gf
+import app.codeformer as cf
+import app.gfpgan as gf
 
 app = FastAPI()
 
