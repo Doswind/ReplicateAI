@@ -1,3 +1,11 @@
 [build]
-command = "python app/main.py"
-publish = "dist"
+  functions = "functions/"
+
+[[functions]]
+  name = "gradio_app"
+  runtime = "python"
+  directory = "functions/gradio_app"
+  included_files = ["functions/gradio_app/main.py", "requirements.txt"]
+
+[dev]
+  command = "python functions/gradio_app/main.py"
